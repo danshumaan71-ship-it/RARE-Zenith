@@ -26,13 +26,13 @@ module.exports = {
       }
     }
   },
-  plugins: []
-};
-module.exports = {
+  module.exports = {
   plugins: {
     tailwindcss: {},
     autoprefixer: {}
-    import "./globals.css";
+  }
+};
+import "./globals.css";
 
 export const metadata = {
   title: "Rare Zenith – Real Estate Consultancy",
@@ -149,5 +149,5 @@ export default function ProjectPage({ params }) {
   );
 }
 
-  }
+  plugins: []
 };
