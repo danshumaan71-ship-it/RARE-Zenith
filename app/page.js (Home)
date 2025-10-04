@@ -1,0 +1,60 @@
+import Link from "next/link";
+
+const projects = [
+  {
+    slug: "zenith-heights",
+    name: "Zenith Heights",
+    location: "Noida Extension",
+    status: "Under Construction",
+    price: "₹75 L – ₹1.2 Cr",
+    description:
+      "Luxury 3 BHK & 4 BHK apartments with modern amenities and metro connectivity."
+  },
+  {
+    slug: "urban-vista",
+    name: "Urban Vista",
+    location: "Siddharth Vihar",
+    status: "Ready to Move",
+    price: "₹95 L – ₹1.4 Cr",
+    description:
+      "Spacious residences offering clubhouse, gym and smart home features."
+  }
+];
+
+export default function Home() {
+  return (
+    <main className="max-w-5xl mx-auto p-6">
+      <header className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-primary">Rare Zenith</h1>
+        <p className="text-lg mt-2">
+          Your trusted consultancy for under-construction and ready-to-move
+          projects.
+        </p>
+      </header>
+
+      <section className="grid md:grid-cols-2 gap-6">
+        {projects.map((p) => (
+          <Link
+            key={p.slug}
+            href={`/projects/${p.slug}`}
+            className="block bg-white shadow rounded-2xl p-6 hover:shadow-lg transition"
+          >
+            <h2 className="text-2xl font-semibold mb-2">{p.name}</h2>
+            <p className="text-sm text-gray-600">
+              {p.location} • {p.status}
+            </p>
+            <p className="mt-3">{p.description}</p>
+            <p className="mt-3 font-semibold text-primary">{p.price}</p>
+            <span className="inline-block mt-3 text-accent font-medium">
+              View Details →
+            </span>
+          </Link>
+        ))}
+      </section>
+
+      <footer className="text-center mt-16 text-gray-500 text-sm">
+        © {new Date().getFullYear()} Rare Zenith | All Rights Reserved
+      </footer>
+    </main>
+  );
+}
